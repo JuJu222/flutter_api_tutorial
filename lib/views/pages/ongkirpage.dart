@@ -394,14 +394,15 @@ class _OngkirpageState extends State<Ongkirpage> {
                       ElevatedButton(
                         onPressed: () {
                           // handleButtonPress();
-                          if (selectedCityOrigin == null || selectedCityDestination == null || selectedKurir.isEmpty || ctrlBerat.text.isEmpty) {
-                            UiToast.toastErr('Semua field harus diisi');
-                          } else {
-                            setState(() {
-                              isLoading = true;
-                            });
-                            getCostsData();
-                          }
+                          // if (selectedCityOrigin == null || selectedCityDestination == null || selectedKurir.isEmpty || ctrlBerat.text.isEmpty) {
+                          //   UiToast.toastErr('Semua field harus diisi');
+                          // } else {
+                          //   setState(() {
+                          //     isLoading = true;
+                          //   });
+                          //   getCostsData();
+                          // }
+                          MasterDataService.getMahasiswa();
                         },
                         child: const Text(
                           'Hitung Estimasi Harga',
