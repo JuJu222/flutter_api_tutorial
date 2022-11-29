@@ -6,3 +6,4 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lazy_loading_list/lazy_loading_list.dart';
 
 part 'ongkirpage.dart';
+part 'mahasiswapage.dart';

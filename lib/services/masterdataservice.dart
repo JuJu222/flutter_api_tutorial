@@ -57,4 +57,38 @@ class MasterDataService {
 
     return response;
   }
+
+  static Future<http.Response> addMahasiswa() async {
+    var response = await http.post(Uri.http("10.0.2.2:9090", '/mahasiswa'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: <String, dynamic>{
+          'nim': '0706012010005',
+          'name': 'Devid',
+          'prodi': 'IBM',
+        });
+
+    var job = json.decode(response.body);
+    print(job.toString());
+
+    return response;
+  }
+
+  static Future<http.Response> updateMahasiswa() async {
+    var response = await http.post(Uri.http("10.0.2.2:9090", '/mahasiswa'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, dynamic>{
+          'nim': '0706012010005',
+          'name': 'Devid',
+          'prodi': 'IBM',
+        }));
+
+    var job = json.decode(response.body);
+    print(job.toString());
+
+    return response;
+  }
 }
